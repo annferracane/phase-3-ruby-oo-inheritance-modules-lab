@@ -16,7 +16,7 @@ class Song
   def initialize
     # @@songs << self
     # self.class.all << self
-    super
+    # super
   end
 
   # def self.find_by_name(name)
@@ -44,3 +44,5 @@ class Song
   # end
   
 end
+
+binding.pry

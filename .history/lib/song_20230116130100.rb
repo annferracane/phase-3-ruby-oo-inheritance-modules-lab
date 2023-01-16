@@ -1,22 +1,18 @@
 require 'pry'
 require_relative './concerns/memorable'
 require_relative './concerns/findable'
-require_relative './concerns/paramable'
 
 class Song
 
-  extend Memorable::ClassMethods, Findable
-  include Memorable::InstanceMethods, Paramable
+  extend Memorable, Findable, Paramable
 
-  attr_accessor :name
+  # attr_accessor :name
   attr_reader :artist
 
   @@songs = []
 
   def initialize
-    # @@songs << self
-    # self.class.all << self
-    super
+    @@songs << self
   end
 
   # def self.find_by_name(name)

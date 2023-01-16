@@ -15,7 +15,7 @@ class Song
 
   def initialize
     # @@songs << self
-    # self.class.all << self
+    self.class.all << self
     super
   end
 
@@ -44,3 +44,5 @@ class Song
   # end
   
 end
+
+binding.pry

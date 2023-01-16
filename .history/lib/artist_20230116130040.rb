@@ -1,21 +1,17 @@
 require 'pry'
 require_relative './concerns/memorable'
 require_relative './concerns/findable'
-require_relative './concerns/paramable'
 
 class Artist
-  extend Memorable::ClassMethods, Findable
-  include Memorable::InstanceMethods, Paramable
+  extend Memorable, Findable
 
-  attr_accessor :name
+  # attr_accessor :name
   attr_reader :songs
 
   @@artists = []
 
   def initialize
-   # @@artists << self
-    # self.class.all << self
-    super
+    @@artists << self
     @songs = []
   end
 
@@ -48,3 +44,5 @@ class Artist
   #   name.downcase.gsub(' ', '-')
   # end
 end
+
+binding.pry
